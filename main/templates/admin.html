@@ -1,0 +1,21 @@
+{% extends 'admin/change_form.html' %}
+{% load static %}
+
+{% block admin_change_form_document_ready %}
+{{ block.super }}
+<script>
+(function($) {
+    $('#id_color').on('click', function(){
+        if($('#id_color_volume_max').prop('checked') == true){
+            $('#id_color_volume_max').prop('readonly', false)
+            $('#id_color_volume_max').val('')
+            $('#id_color_volume_max').css('background', 'white')
+        }else{
+            $('3id_color_volume_max').prop('readonly', true)
+            $('#id_color_volume_max').val('')
+            $('3id_color_volume_max').css('background', 'lightgray')
+        }
+    })
+})(django.jQuery);
+</script>
+{% endblock %}
